@@ -1,0 +1,151 @@
+---
+title: "Out of Area Placements Top Trusts"
+author: "Vanessa Fillis"
+date: "08/01/2021"
+output: html_document
+---
+
+# Out of Area Placements in Mental Health Services in NHS trusts in England
+
+## Activate packages
+
+```{r}
+library(lubridate)
+library(tidyr)
+library(dplyr)
+```
+
+## Data import
+
+In a previous step I have downloaded data for Out of Area Placements (OAPs) in mental health services between October 2016 and October 2020 (latest available data set) from [NHS Digital](https://digital.nhs.uk/data-and-information/publications/statistical/out-of-area-placements-in-mental-health-services).
+
+```{r}
+OAPs <- read.csv("oaps2016to2020.csv", stringsAsFactors = FALSE)
+```
+
+## Inspect the data frame
+
+What I can see:
+
+- The column containing the date is not in date format, but as character. I have to add a date column that contains the publication periodm in date format. Because the data frame is so large I will to this *after* I have filtered for the questions I want to look at. 
+- The column **value** is in character format as well. I will transform it into numeric values. 
+
+```{r}
+head(OAPs)
+OAPs$value <- as.numeric(OAPs$value)
+head(OAPs)
+```
+
+## Filter for total inappropriate OAP days in trusts for each period
+
+```{r}
+OAPs.trusts.days <- subset(OAPs, OAPs$PublicationType == "Month")
+
+OAPs.trusts.days <- subset(OAPs.trusts.days, OAPs.trusts.days$Question == "Total number of inappropriate OAP days over the period" | OAPs.trusts.days$Question == "Total number of inappropriate out of area placement days over the period")
+
+OAPs.trusts.days <- subset(OAPs.trusts.days, OAPs.trusts.days$Breakdown1 == "SendingProvider")
+```
+
+### Convert date column
+
+Now I will convert the date column. 
+
+```{r}
+#split date in PublicationPeriod in beginning and end of publication period
+OAPs.trusts.days <- tidyr::separate(data = OAPs.trusts.days, col = PublicationPeriod, into = c("beginning.of.publication.period", "end.of.publication.period"), sep = "-")
+
+OAPs.trusts.days$beginning.of.publication.period <- lubridate::dmy(OAPs.trusts.days$beginning.of.publication.period)
+
+OAPs.trusts.days$end.of.publication.period <- lubridate::dmy(OAPs.trusts.days$end.of.publication.period)
+```
+
+### Delete empty columns
+
+Some columns are empty. I will delete them. 
+
+```{r}
+OAPs.trusts.days <- OAPs.trusts.days[-c(9:11)]
+```
+
+### Filter for October 2020
+
+I want to know which trusts have had the most inappropriate OAP days in the latest available time period: October 2020. 
+
+```{r}
+OAPs.trusts.days.oct20 <- subset(OAPs.trusts.days, OAPs.trusts.days$beginning.of.publication.period == "2020-10-01")
+```
+
+### Top 10 of October 2020
+
+Look at the top 10 trusts with most inappropriate OAP days in October 2020. 
+
+```{r}
+OAPs.trusts.days.oct20 <- arrange(OAPs.trusts.days.oct20, desc(value))
+
+#Which ones are the top 10?
+OAPs.trusts.days.oct20.top10 <- head(OAPs.trusts.days.oct20, 11)
+```
+
+### Export
+
+```{r}
+write.csv(OAPs.trusts.days.oct20.top10, file = "OAPs_trusts_days_top10oct20.csv")
+```
+
+## Filter for costs caused by inappropriate OAPs in trusts for each period
+
+```{r}
+OAPs.trusts.costs <- subset(OAPs, OAPs$PublicationType == "Month")
+
+OAPs.trusts.costs <- subset(OAPs.trusts.costs, OAPs.trusts.costs$Question == "Total Cost For Inappropriate OAPs in Period" | OAPs.trusts.costs$Question == "Total Cost For Inappropriate out of area placements in Period")
+
+OAPs.trusts.costs <- subset(OAPs.trusts.costs, OAPs.trusts.costs$Breakdown1 == "SendingProvider")
+```
+
+### Convert date column
+
+Now I will convert the date column. 
+
+```{r}
+#split date in PublicationPeriod in beginning and end of publication period
+OAPs.trusts.costs <- tidyr::separate(data = OAPs.trusts.costs, col = PublicationPeriod, into = c("beginning.of.publication.period", "end.of.publication.period"), sep = "-")
+
+OAPs.trusts.costs$beginning.of.publication.period <- lubridate::dmy(OAPs.trusts.costs$beginning.of.publication.period)
+
+OAPs.trusts.costs$end.of.publication.period <- lubridate::dmy(OAPs.trusts.costs$end.of.publication.period)
+```
+
+### Delete empty columns
+
+Some columns are empty. I will delete them. 
+
+```{r}
+OAPs.trusts.costs <- OAPs.trusts.costs[-c(9:11)]
+```
+
+### Filter for October 2020
+
+I want to know which trusts have had the highest costs caused by inappropriate OAPs in the latest available time period: October 2020. 
+
+```{r}
+OAPs.trusts.costs.oct20 <- subset(OAPs.trusts.costs, OAPs.trusts.costs$beginning.of.publication.period == "2020-10-01")
+```
+
+### Top 10 of October 2020
+
+Look at the top 10 trusts with most inappropriate OAP days in October 2020. 
+
+```{r}
+OAPs.trusts.costs.oct20 <- arrange(OAPs.trusts.costs.oct20, desc(value))
+
+#Which ones are the top 10?
+OAPs.trusts.costs.oct20.top10 <- head(OAPs.trusts.costs.oct20, 11)
+```
+
+### Export
+
+```{r}
+write.csv(OAPs.trusts.costs.oct20.top10, file = "OAPs_trusts_costs_top10oct20.csv")
+```
+
+

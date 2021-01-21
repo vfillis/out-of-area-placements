@@ -120,18 +120,11 @@ h3 {
   margin: 0 auto;
 }
 
-/* lists */
-li {
-  margin-left: 8%;
-  padding:1%;
-}
-
-/* Footer */
-.footer {
-  padding: 20%;
-  text-align: center;
-  margin-top: 20%;
-}
+/* Data and analysis */
+.datasource {
+  background: grey;
+}  
+  
 
 @import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css");
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");

@@ -9,3 +9,6 @@ You can read the full story [here](https://vfillis.github.io/out-of-area-placeme
 Monthly data on Out of Area Placements is published by [NHS Digital](https://digital.nhs.uk/data-and-information/publications/statistical/out-of-area-placements-in-mental-health-services). 
 
 Take a look at the [analysis the article is based on](https://github.com/vfillis/out-of-area-placements/tree/main/analysis). 
+
+## Visualisations
+

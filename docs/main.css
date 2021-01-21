@@ -119,11 +119,6 @@ h3 {
   height: auto;
   margin: 0 auto;
 }
-
-/* Data and analysis */
-.datasource {
-  background: grey;
-}  
   
 
 @import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css");

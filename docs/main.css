@@ -115,41 +115,10 @@ h3 {
 /* Visualisations */
 .flourish-embed {
   position:relative;
-  width:80%;
+  width:100%;
   height: auto;
   margin: 0 auto;
 }
-
-/* embeds */
-.instagram-media {
-  position: relative;
-  margin: 0 auto;
-}
-
-/* images */
-.jocelyn-image { 
-  width:50%;
-  float:left;
-  padding:3%;
-}
-
-.abbi-image { 
-  width:45%;
-  float:right;
-  padding:3%;
-}
-
-figure {
-  margin:0;
-  border:0;
-  padding:0;
-}
-
-/* captions */
-figcaption {
-  font-size:14px;
-  color: grey;
-} 
 
 /* lists */
 li {

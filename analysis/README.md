@@ -4,15 +4,19 @@ I carried out the analysis in R and Excel. The following gives an overview over 
 
 ## Inappropriate Out of Area Placements in England
 
-I analysed inappropriate Out of Area Placements active at the end of the month, days, costs, and receiving organisations in England using R. You can find the markdown [here](https://github.com/vfillis/out-of-area-placements/blob/main/analysis/OAPs-England.Rmd). 
+I analysed inappropriate Out of Area Placements active at the end of the month, days, costs, and receiving organisations in England using R. The markdown can be found [here](https://github.com/vfillis/out-of-area-placements/blob/main/analysis/OAPs-England.Rmd). 
 
 ## Inappropriate Out of Area Placements in the top five trusts
 
-I analysed inappropriate Out of Area Placements days and costs in the top five trusts using R. You can find the markdown [here](https://github.com/vfillis/out-of-area-placements/blob/main/analysis/OAPs-top-trusts.Rmd). 
+I analysed inappropriate Out of Area Placements days and costs in the top five trusts using R. I didn't base comparisons between the trusts on inappropriate Out of Area Placements that were active at the end of the month as they are subject to rounding. This means the number of active OAPs each month ranges in an interval of -2 and +2. These rounding differences could result in a different order of trusts.
+
+The markdown can be found [here](https://github.com/vfillis/out-of-area-placements/blob/main/analysis/OAPs-top-trusts.Rmd). 
 
 ## Inappropriate Out of Area Placements in Birmingham and Solihull Mental Health NHS Foundation Trust
 
-I analysed inappropriate Out of Area Placements days and costs in Birmingham and Solihull Mental Health NHS Foundation Trust using R. You can find the markdown [here](https://github.com/vfillis/out-of-area-placements/blob/main/analysis/OAPs-Birmingham.Rmd). 
+I analysed inappropriate Out of Area Placements days and costs in Birmingham and Solihull Mental Health NHS Foundation Trust using R. 
+
+The markdown can be found [here](https://github.com/vfillis/out-of-area-placements/blob/main/analysis/OAPs-Birmingham.Rmd). 
 
 ## Change in the top five trusts over the past four years
 

@@ -1,4 +1,4 @@
-# Analysis
+# The analysis
 
 I carried the analysis out in R and Excel. The following gives an overview over what tools I used for which aspect. 
 

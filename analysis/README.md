@@ -16,7 +16,7 @@ The markdown can be found [here](https://github.com/vfillis/out-of-area-placemen
 
 ## Inappropriate Out of Area Placements in Birmingham and Solihull Mental Health NHS Foundation Trust
 
-I analysed inappropriate Out of Area Placements days and costs in Birmingham and Solihull Mental Health NHS Foundation Trust using R. 
+I analysed inappropriate Out of Area Placements days and costs in Birmingham and Solihull Mental Health NHS Foundation Trust using R. I didn't include inappropriate Out of Area Placements that were active at the end of the month for Birmingham and Solihull Mental Health NHS Foundation Trust as they are subject to rounding. This means the number of active OAPs each month ranges in an interval of -2 and +2. Because of these rounding differences comparisons between months should be treated with caution.   
 
 The markdown can be found [here](https://github.com/vfillis/out-of-area-placements/blob/main/analysis/OAPs-Birmingham.Rmd). 
 

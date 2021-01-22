@@ -1,6 +1,6 @@
 # Out of Area Placements in mental health services
 
-Every month patients are sent away from their home for mental health treatment because there are no local beds available for them. Inappropriate Out of Area Placements aren't going down despite the government's plan to eliminate them by 2020/21. 
+Every month patients are sent away from their home for mental health treatment because there are no local beds available for them. Inappropriate Out of Area Placements aren't decreasing despite the government's plan to eliminate them by 2020/21. 
 
 You can read the full story [here](https://vfillis.github.io/out-of-area-placements/).
 

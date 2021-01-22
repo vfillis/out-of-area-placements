@@ -1,0 +1,9 @@
+﻿Distance,Number of inappropriate out of area placements active,%
+less than 25 km,120,36.36363636
+25km or greater and less than 50km,5,1.515151515
+50km or greater and less than 100km,15,4.545454545
+100km or greater and less than 200km,115,34.84848485
+200km or greater and less than 300km,75,22.72727273
+300km or greater,0,0
+,,
+Total,330,

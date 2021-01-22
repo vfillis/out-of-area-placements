@@ -16,5 +16,5 @@ Take a look at the [analysis the article is based on](https://github.com/vfillis
 - [Inappropriate Out of Area Placements: Top five trusts in October 2020](https://public.flourish.studio/visualisation/5034391/)
 - [Inappropriate Out of Area Placements: Top five trusts over the past four years](https://public.flourish.studio/visualisation/5026748/)
 - [Inappropriate Out of Area Placements in Birmingham](https://public.flourish.studio/visualisation/5034482/)
-- [Inappropriate Out of Area Placements: Where is BSMHFT trusts sending their patients?](https://public.flourish.studio/visualisation/5034495/)
+- [Inappropriate Out of Area Placements: Where is BSMHFT sending their patients?](https://public.flourish.studio/visualisation/5034495/)
 - [Inappropriate Out of Area Placements in Birmingham: Distance](https://public.flourish.studio/visualisation/5034512/)

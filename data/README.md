@@ -1,6 +1,6 @@
 # The data
 
-The data between October 2016 and October 2020 was downloaded from [NHS Digital](https://digital.nhs.uk/data-and-information/publications/statistical/out-of-area-placements-in-mental-health-services).
+Data on Out of Area Placements in Mental Health services from between October 2016 and October 2020 was downloaded from [NHS Digital](https://digital.nhs.uk/data-and-information/publications/statistical/out-of-area-placements-in-mental-health-services).
 
 The individual CSVs can be merged using the command line.
 

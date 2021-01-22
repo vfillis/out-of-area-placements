@@ -4,7 +4,9 @@ I carried out the analysis in R and Excel. The following gives an overview over 
 
 ## Inappropriate Out of Area Placements in England
 
-I analysed inappropriate Out of Area Placements active at the end of the month, days, costs, and receiving organisations in England using R. The markdown can be found [here](https://github.com/vfillis/out-of-area-placements/blob/main/analysis/OAPs-England.Rmd). 
+I analysed inappropriate Out of Area Placements active at the end of the month, days, costs, and receiving organisations in England using R. 
+
+The markdown can be found [here](https://github.com/vfillis/out-of-area-placements/blob/main/analysis/OAPs-England.Rmd). 
 
 ## Inappropriate Out of Area Placements in the top five trusts
 

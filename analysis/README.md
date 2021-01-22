@@ -1,6 +1,6 @@
 # The analysis
 
-I carried out the analysis in R and Excel. The following gives an overview over what tools I used for which aspect. 
+I carried out the analysis in R and Excel. The following gives an overview over what tool I used for which aspect. 
 
 ## Inappropriate Out of Area Placements in England
 

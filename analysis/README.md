@@ -22,3 +22,8 @@ I stored the values in a new file "OAPs-distance-Birmingham.csv" which can be fo
 
 ## Bed occupancy data 
 
+Quarterly bed occupancy data is [published by NHS England](https://www.england.nhs.uk/statistics/statistical-work-areas/bed-availability-and-occupancy/bed-data-overnight/). For the top five trusts I looked up what their average daily mental health bed occupancy was in Q2 2020/21 (July to September 2020) since this was the latest available data. 
+
+Additionally, I manually went through the bed occupancy files from QX to Q2 2020/21 to find out since when the bed occupancy in Birmingham and Solihull Mental Health NHS Foundation Trust is staying above 95%. 
+
+I stored the values in a new file "" which can be found and downloaded [here](). 

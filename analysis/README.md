@@ -18,7 +18,9 @@ I stored the values in a new file "OAPs-distance-Birmingham.csv" which can be fo
 
 ## Where are patients from Birmingham sent to?
 
+The monthly Excel files also provide an overview over where patients from a sending organisation are being placed. For every month, this can be found in the sheet "8 - Sender and Receiver". To find out where patients from Birmingham and Solihull Mental Health NHS Foundation Trust have been sent to in the past 12 months I went through the Excel files from October 2020 back to November 2019. In the sheet "8 - Sender and Receiver" I filtered for the Birmingham and Solihull Mental Health NHS Foundation Trust and stored the values in a new file "OAPs-birmingham-receiving-organisations.xlsx" which can be found [here](). 
 
+I used a pivot table to get the total days for each receiving organisation in the past 12 months. 
 
 ## Bed occupancy data 
 
@@ -26,4 +28,4 @@ Quarterly bed occupancy data is [published by NHS England](https://www.england.n
 
 Additionally, I manually went through the bed occupancy files from Q4 2015/16 to Q2 2020/21 to find out since when the bed occupancy in Birmingham and Solihull Mental Health NHS Foundation Trust is staying above 95%. 
 
-I stored the values in a new file "" which can be found and downloaded [here](). 
+I stored the values in a new file "OAPs-bed-occupancy-top-5.csv" which can be found and downloaded [here](https://github.com/vfillis/out-of-area-placements/blob/main/analysis/OAPs-bed-occupancy-top-5.csv). 

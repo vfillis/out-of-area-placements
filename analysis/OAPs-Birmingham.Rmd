@@ -1,0 +1,131 @@
+---
+title: "Out of Area Placements Birmingham"
+author: "Vanessa Fillis"
+date: "08/01/2021"
+output: html_document
+---
+
+# Out of Area Placements in Mental Health Services in the Birmingham and Solihull Mental Health NHS Foundation Trust
+
+## Activate packages
+
+```{r}
+library(lubridate)
+library(tidyr)
+library(dplyr)
+```
+
+## Data import
+
+In a previous step I have downloaded data for Out of Area Placements (OAPs) in mental health services between October 2016 and October 2020 (latest available data set) from [NHS Digital](https://digital.nhs.uk/data-and-information/publications/statistical/out-of-area-placements-in-mental-health-services). I have merged them, so that I only have one CSV to import. 
+
+```{r}
+OAPs <- read.csv("oaps2016to2020.csv", stringsAsFactors = FALSE)
+```
+
+## Inspect the data frame
+
+What I can see:
+
+- The column containing the date is not in date format, but as character. I have to add a date column that contains the publication period in date format. Because the data frame is large I will to this *after* I have filtered for the questions I want to look at, although this means I have to do it several times. But trying to do it before, led to R crashing. 
+- The column **value** is in character format as well. I will transform it into numeric values. 
+
+```{r}
+head(OAPs)
+OAPs$value <- as.numeric(OAPs$value)
+head(OAPs)
+```
+
+## Filter for total inappropriate OAP days in Birmingham and Solihull Mental Health NHS Foundation Trust for each period
+
+At first I want to look at inappropriate OAP days each month. 
+
+For almost all months the term **Out of Area Placement** is abbreviated. Only in July 2019, the full term has been used. This has to be considered when writing the filter. 
+
+```{r}
+OAPs.trusts.days <- subset(OAPs, OAPs$PublicationType == "Month")
+
+OAPs.trusts.days <- subset(OAPs.trusts.days, OAPs.trusts.days$Question == "Total number of inappropriate OAP days over the period" | OAPs.trusts.days$Question == "Total number of inappropriate out of area placement days over the period")
+
+OAPs.trusts.days <- subset(OAPs.trusts.days, OAPs.trusts.days$Breakdown1 == "SendingProvider")
+```
+
+### Convert date column
+
+Now I will convert the date column. 
+
+```{r}
+#split date in PublicationPeriod in beginning and end of publication period
+OAPs.trusts.days <- tidyr::separate(data = OAPs.trusts.days, col = PublicationPeriod, into = c("beginning.of.publication.period", "end.of.publication.period"), sep = "-")
+
+OAPs.trusts.days$beginning.of.publication.period <- lubridate::dmy(OAPs.trusts.days$beginning.of.publication.period)
+
+OAPs.trusts.days$end.of.publication.period <- lubridate::dmy(OAPs.trusts.days$end.of.publication.period)
+```
+
+### Delete empty columns
+
+Some columns are empty. I will delete them. 
+
+```{r}
+OAPs.trusts.days <- OAPs.trusts.days[-c(9:11)]
+```
+
+### Filter for Birmingham and Solihull Mental Health NHS Foundation Trust
+
+Sometimes the name of the trust is written in capital letters, sometimes it is not. I have to consider this when writing the filter. 
+
+```{r}
+OAPs.bham.days <- subset(OAPs.trusts.days, OAPs.trusts.days$Breakdown1Description == "BIRMINGHAM AND SOLIHULL MENTAL HEALTH NHS FOUNDATION TRUST" | OAPs.trusts.days$Breakdown1Description == "Birmingham And Solihull Mental Health NHS Foundation Trust")
+```
+
+### Export
+
+```{r}
+write.csv(OAPs.bham.days, file = "OAPs_bham_days.csv")
+```
+
+## Filter for costs caused by inappropriate OAP in Birmingham and Solihull Mental Health NHS Foundation Trust for each period
+
+I also want to look at costs caused by inappropriate OAPs. 
+
+```{r}
+OAPs.trusts.costs <- subset(OAPs, OAPs$PublicationType == "Month")
+
+OAPs.trusts.costs <- subset(OAPs.trusts.costs, OAPs.trusts.costs$Question == "Total Cost For Inappropriate OAPs in Period" | OAPs.trusts.costs$Question == "Total Cost For Inappropriate out of area placements in Period")
+
+OAPs.trusts.costs <- subset(OAPs.trusts.costs, OAPs.trusts.costs$Breakdown1 == "SendingProvider")
+```
+
+### Convert date column
+
+Now I will convert the date column. 
+
+```{r}
+#split date in PublicationPeriod in beginning and end of publication period
+OAPs.trusts.costs <- tidyr::separate(data = OAPs.trusts.costs, col = PublicationPeriod, into = c("beginning.of.publication.period", "end.of.publication.period"), sep = "-")
+
+OAPs.trusts.costs$beginning.of.publication.period <- lubridate::dmy(OAPs.trusts.costs$beginning.of.publication.period)
+
+OAPs.trusts.costs$end.of.publication.period <- lubridate::dmy(OAPs.trusts.costs$end.of.publication.period)
+```
+
+### Delete empty columns
+
+Some columns are empty. I will delete them. 
+
+```{r}
+OAPs.trusts.costs <- OAPs.trusts.costs[-c(9:11)]
+```
+
+### Filter for Birmingham and Solihull Mental Health NHS Foundation Trust
+
+```{r}
+OAPs.bham.costs <- subset(OAPs.trusts.costs, OAPs.trusts.costs$Breakdown1Description == "BIRMINGHAM AND SOLIHULL MENTAL HEALTH NHS FOUNDATION TRUST" | OAPs.trusts.costs$Breakdown1Description == "Birmingham And Solihull Mental Health NHS Foundation Trust")
+```
+
+### Export
+
+```{r}
+write.csv(OAPs.bham.costs, file = "OAPs_bham_costs.csv")
+```

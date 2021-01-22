@@ -4,5 +4,8 @@
 
 File too big for r, but filtering first, then doing formatting worked (although it meant converting the date column every time). Might have been easier to use command line / sql 
 
+## Change in the top five trusts over the past four years
 
-Change over four years: Excel 
+Besides CSVs, NHS Digital offers Excel files on Out of Area Placements. They include a sheet "" which contains inappropriate Out of Area Placement days in the last 12 months. 
+
+The Excel files for October 2020, October 2019, October 2018, and October 2017 each contain how many days patients have spent placed outside their area inappropriately in the last 12 months. In each of these files I looked up the value for the top five trusts manually. I stored the values in a new file "" which can be found and downloaded [here]().

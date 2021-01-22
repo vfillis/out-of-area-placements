@@ -15,4 +15,4 @@ The Excel files for October 2020, October 2019, October 2018, and October 2017 e
 The Excel file ""
 
 
-I stored the values in a new file "OAPs-distance-Birmingham.csv" which can be found and downloaded [here]().
+I stored the values in a new file "OAPs-distance-Birmingham.csv" which can be found and downloaded [here](https://github.com/vfillis/out-of-area-placements/blob/main/analysis/OAPs-distance-birmingham.csv).

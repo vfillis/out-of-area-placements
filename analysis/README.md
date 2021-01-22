@@ -8,7 +8,7 @@ File too big for r, but filtering first, then doing formatting worked (although 
 
 Besides CSVs, NHS Digital offers Excel files on Out of Area Placements. They include a sheet "6 - Inappropriate OAPs - Year" which contains inappropriate Out of Area Placement days in the last 12 months. 
 
-The Excel files for October 2020, October 2019, October 2018, and October 2017 each contain how many days patients have spent placed outside their area inappropriately in the last 12 months. In each of these files I looked up the value for the top five trusts manually. I stored the values in a new file "OAP-days-Top5-yearly-changes.csv" which can be found and downloaded [here]().
+The Excel files for October 2020, October 2019, October 2018, and October 2017 each contain how many days patients have spent placed outside their area inappropriately in the last 12 months. In each of these files I looked up the value for the top five trusts manually. I stored the values in a new file "OAP-days-Top5-yearly-changes.csv" which can be found and downloaded [here](https://github.com/vfillis/out-of-area-placements/blob/main/analysis/OAP-days-Top5-yearly-changes.csv).
 
 ## Distance for Birmingham and Solihull Mental Health NHS Foundation Trust
 
@@ -16,3 +16,6 @@ The Excel file ""
 
 
 I stored the values in a new file "OAPs-distance-Birmingham.csv" which can be found and downloaded [here](https://github.com/vfillis/out-of-area-placements/blob/main/analysis/OAPs-distance-birmingham.csv).
+
+## Bed occupancy data 
+
